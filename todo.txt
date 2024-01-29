@@ -1,0 +1,22 @@
+TODO
+    - [DONE] Install and setup
+    - [DONE] Init database, superuser, test run
+    - [DONE] Create core app for base pages
+    - [DONE] Create app for user profiles
+    - [DONE] Create app for products
+          - [DONE] Add category model
+    - [DONE] List out newest products on the front page
+    - [DONE] Product detail view
+    - [DONE] Category view
+    - [DONE] Show vendor on product detail page
+    - Add images to the products
+    - Simple search
+    - Vendor detail page
+    - Make it possible to sign up, log in and log out
+    - Create my account page
+    - Add product to the cart
+    - View cart
+    - Checkout
+    - Implement payment gateway Mpesa
+    - Admin pages for the vendors
+    - Deploy project
