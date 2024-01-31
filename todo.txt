@@ -10,9 +10,9 @@ TODO
     - [DONE] Category view
     - [DONE] Show vendor on product detail page
     - [DONE] Add images to the products
-    - Vendor detail page
-    - Make it possible to sign up, log in and log out
-    - Create my account page
+    - [DONE] Vendor detail page
+    - [DONE] Make it possible to sign up, log in and log out
+    - [DONE] Create my account page
     - Simple search
     - Add product to the cart
     - View cart

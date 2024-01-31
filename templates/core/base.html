@@ -15,6 +15,9 @@
     
     <div class="menu flex space-x-4">
         {% menu %}
+        {% if request.user.is_authenticated %}
+            <a href="{% url 'profile' %}" class="text-white">Profile</a>
+        {% endif %}
     </div>
     
 </nav>
