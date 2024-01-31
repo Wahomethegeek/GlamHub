@@ -13,7 +13,7 @@ TODO
     - [DONE] Vendor detail page
     - [DONE] Make it possible to sign up, log in and log out
     - [DONE] Create my account page
-    - Simple search
+    - [DONE] Simple search
     - Add product to the cart
     - View cart
     - Checkout
