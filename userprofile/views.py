@@ -3,11 +3,11 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
+from django.utils.text import slugify
 
 from userprofile.models import Userprofile
 
 from store.forms import ProductForm
-from store.models import Product, Category
 
 
 # Create your views here.
@@ -28,15 +28,17 @@ def my_store(request):
 def add_product(request):
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
+
+        # Save the form data to the database
         if form.is_valid():
-            # Save the form data to the database
+            title = request.POST.get('title')
             product = form.save(commit=False)
-            product.user = request.user  # Assuming Product model has a 'user' field
+            product.user = request.user
+            product.slug = slugify(title)
             product.save()
-            return redirect('success_page')  # Redirect to a success page or any other desired page
+            return redirect('my_store') # Redirect to the success page
     else:
         form = ProductForm()
-
     return render(request, 'userprofile/add_product.html', {'form': form})
 
 
