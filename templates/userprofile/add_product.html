@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-    <h1 class="text-2xl"> Add products</h1>
+    <h1 class="text-2xl">{{ title }}</h1>
     &nbsp;
     <form method="post" action="." enctype="multipart/form-data">
     {% csrf_token %}
@@ -14,4 +14,8 @@
     
     <button class="mt-6 py-4 px-8 bg-teal-500 text-white hover:bg-teal-800 rounded">Submit</button>
     </form>
+    
+    {% if product %}
+        <a href="{% url 'delete_product' product.id %}" class="mt-2 inline-block py-4 px-8 bg-red-500 text-white rounded">Delete product</a>
+    {% endif %}
 {% endblock %}
