@@ -46,7 +46,7 @@ def add_product(request):
             return redirect('my_store')  # Redirect to the success page which is my store
     else:
         form = ProductForm()
-    return render(request, 'userprofile/add_product.html', {
+    return render(request, 'userprofile/product_form.html', {
         'title': 'Add Product',
         'form': form
     })
@@ -68,7 +68,7 @@ def edit_product(request, pk):
     else:
         form = ProductForm(instance=product)
 
-    return render(request, 'userprofile/add_product.html', {
+    return render(request, 'userprofile/product_form.html', {
         'title': 'Edit product',
         'product': product,
         'form': form

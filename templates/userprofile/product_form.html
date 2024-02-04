@@ -7,7 +7,7 @@
 {% block content %}
     <h1 class="text-2xl">{{ title }}</h1>
     &nbsp;
-    <form method="post" action="." enctype="multipart/form-data">
+    <form method="post" action="." enctype="multipart/form-data" class="space-y-5">
     {% csrf_token %}
         
     {{ form.as_p }}

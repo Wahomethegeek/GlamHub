@@ -14,7 +14,7 @@ TODO
     - [DONE] Make it possible to sign up, log in and log out
     - [DONE] Create my account page
     - [DONE] Simple search
-    - Admin pages for the vendor
+    - [DONE] Admin pages for the vendor
     - Add product to the cart
     - View cart
     - Checkout
