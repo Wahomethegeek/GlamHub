@@ -6,7 +6,7 @@ class Cart(object):
     def __init__(self, request):
         self.session = request.session
         # check the session id
-        cart = self.session.get('settings.CART_SESSION_ID')
+        cart = self.session.get(settings.CART_SESSION_ID)
 
         if not cart:
             cart = self.session[settings.CART_SESSION_ID] = {}
@@ -41,6 +41,12 @@ class Cart(object):
             self.cart[product_id]['quantity'] += int(quantity)
 
         self.save()
+
+    def remove(self, product_id):
+        if product_id in self.cart:
+            del self.cart[product_id]
+
+            self.save()
 
     def get_total_cost(self):
         for p in self.cart.keys():
