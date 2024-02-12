@@ -18,7 +18,7 @@ TODO
     - [DONE] Add product to the cart
     - [DONE] View cart
     - [DONE] Make it possible to remove products from the cart
-    - Make it possible to increment/decrement products in the cart
+    - [DONE] Make it possible to increment/decrement products in the cart
     - Fix the design in the cart page
     - Create a checkout page
     - Checkout functionality
