@@ -20,9 +20,12 @@ TODO
     - [DONE] Make it possible to remove products from the cart
     - [DONE] Make it possible to increment/decrement products in the cart
     - [DONE] Add thumbnails to the product
-    - Fix the design in the cart page
+    - [DONE] Fix the design in the cart page
     - Create a checkout page
+    - Separate the shoppers from vendors
     - Checkout functionality
+    - Vendors must be able to see their orders
+    - Vendors must be able to see what they have earned
+    - Only authenticators can checkout
     - Implement payment gateway Mpesa
-    - Admin pages for the vendors
     - Deploy project
