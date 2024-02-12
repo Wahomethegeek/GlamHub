@@ -7,7 +7,7 @@
 {% block content %}
     {% if product.image %}
         <div class="image mb-4">
-            <img src="{{ product.image.url }}" alt="image of {{ product.title }}">
+            <img src="{{ product.get_thumbnail }}" alt="image of {{ product.title }}">
         </div>
     {% endif %}
     <h1 class="text-2xl">{{ product.title }}</h1>
