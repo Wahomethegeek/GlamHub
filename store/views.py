@@ -1,8 +1,12 @@
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Product, Category
 
 from .cart import Cart
+from .forms import OrderForm
+
+
 # Create your views here.
 
 def add_to_cart(request, product_id):
@@ -10,6 +14,7 @@ def add_to_cart(request, product_id):
     cart.add(product_id)
 
     return redirect('cart_view')
+
 
 def change_quantity(request, product_id):
     action = request.GET.get('action', '')
@@ -24,11 +29,13 @@ def change_quantity(request, product_id):
         cart.add(product_id, quantity, True)
     return redirect('cart_view')
 
+
 def remove_from_cart(request, product_id):
     cart = Cart(request)
     cart.remove(product_id)
 
     return redirect('cart_view')
+
 
 def cart_view(request):
     cart = Cart(request)
@@ -38,13 +45,23 @@ def cart_view(request):
     })
 
 
+@login_required
+def checkout(request):
+    cart = Cart(request)
+    form = OrderForm()
+    return render(request, 'store/checkout.html', {'cart': cart, 'form': form,})
+
+
 def search(request):
     query = request.GET.get('query', '')
-    products = Product.objects.filter(status=Product.ACTIVE).filter(Q(title__icontains=query)|Q(description__icontains=query))
+    products = Product.objects.filter(status=Product.ACTIVE).filter(
+        Q(title__icontains=query) | Q(description__icontains=query))
 
     return render(request, 'store/search.html', {
         'query': query,
         'products': products})
+
+
 def category_detail(request, slug):
     category = get_object_or_404(Category, slug=slug)
     products = category.products.filter(status=Product.ACTIVE)

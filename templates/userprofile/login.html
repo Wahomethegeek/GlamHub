@@ -9,8 +9,8 @@
     &nbsp;
     <form method="post" action=".">
     {% csrf_token %}
-    {{ form.as_p }}
+        <p class="space-2xl">{{ form.as_p }}</p>
     &nbsp;
-    <button class="py-4 px-8 bg-teal-800 text-white">Login</button>
+    <button class=" mt-4 py-4 px-8 bg-teal-800 text-white">Login</button>
     </form>
 {% endblock %}
