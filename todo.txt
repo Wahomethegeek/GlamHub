@@ -23,6 +23,7 @@ TODO
     - [DONE] Fix the design in the cart page
     - [DONE] Create a checkout page
     - [DONE] Separate the shoppers from vendors
+    - [DONE] Add a cart button in menu
     - Checkout functionality
     - Vendors must be able to see their orders
     - Vendors must be able to see what they have earned
