@@ -22,7 +22,7 @@ TODO
     - [DONE] Add thumbnails to the product
     - [DONE] Fix the design in the cart page
     - [DONE] Create a checkout page
-    - Separate the shoppers from vendors
+    - [DONE] Separate the shoppers from vendors
     - Checkout functionality
     - Vendors must be able to see their orders
     - Vendors must be able to see what they have earned

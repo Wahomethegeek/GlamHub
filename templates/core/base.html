@@ -28,7 +28,10 @@
         {% menu %}
         {% if request.user.is_authenticated %}
             <a href="{% url 'profile' %}" class="py-2 px-4 bg-teal-800 text-white rounded-xl hover:bg-teal-900">Profile</a>
+            
+            {% if request.user.userprofile.is_vendor %}
             <a href="{% url 'my_store' %}" class="py-2 px-4 bg-teal-800 text-white rounded-xl hover:bg-teal-900">My store</a>
+            {% endif %}
         {% endif %}
     </div>
 </nav>
