@@ -56,3 +56,7 @@ class Cart(object):
             self.cart[str(p)]['product'] = Product.objects.get(pk=p)
 
         return int(sum(item['product'].price * item['quantity'] for item in self.cart.values()))
+
+    def clear(self):
+        del self.session[settings.CART_SESSION_ID]
+        self.session.modified = True

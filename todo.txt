@@ -21,7 +21,7 @@ TODO
     - [DONE] Make it possible to increment/decrement products in the cart
     - [DONE] Add thumbnails to the product
     - [DONE] Fix the design in the cart page
-    - Create a checkout page
+    - [DONE] Create a checkout page
     - Separate the shoppers from vendors
     - Checkout functionality
     - Vendors must be able to see their orders
