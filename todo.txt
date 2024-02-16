@@ -24,9 +24,9 @@ TODO
     - [DONE] Create a checkout page
     - [DONE] Separate the shoppers from vendors
     - [DONE] Add a cart button in menu
-    - Checkout functionality
-    - Vendors must be able to see their orders
+    - [DONE] Checkout functionality
+    - [DONE] Vendors must be able to see their orders
     - Vendors must be able to see what they have earned
-    - Only authenticators can checkout
+    - Only authenticated users can proceed to the checkout
     - Implement payment gateway Mpesa
     - Deploy project
