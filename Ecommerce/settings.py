@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'core',
     'userprofile',
     'store',
+    'django_darajam
 ]
 
 MIDDLEWARE = [
