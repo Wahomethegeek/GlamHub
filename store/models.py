@@ -99,7 +99,7 @@ class Order(models.Model):
     zip_code = models.CharField(max_length=255)
     city = models.CharField(max_length=255)
     phone_number = models.CharField(max_length=255)
-    merchant_id = models.CharField(max_length=255)
+    payment_intent = models.CharField(max_length=255)
 
     created_by = models.ForeignKey(User, related_name='orders', on_delete=models.SET_NULL, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)

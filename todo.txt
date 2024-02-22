@@ -28,8 +28,8 @@ TODO
     - [DONE] Vendors must be able to see their orders
     - [DONE] Only authenticated users can proceed to the checkout
     - Implement payment gateway Mpesa
-        - Get api keys from Daraja
-        - Install mpesa and add credentials in setting.py
+        - [DONE] Get api keys from Daraja
+        - [DONE] Install mpesa daraja and add credentials in setting.py
         - Pass the consumer ke into the checkout view
         - Create Mesa checkout when creating order
         - Create a success page

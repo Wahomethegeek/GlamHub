@@ -1,5 +1,10 @@
+import django_daraja
+from django.conf import settings
+import json
+from django_daraja.mpesa.core import MpesaClient
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
+from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Product, Category, OrderItem
 
@@ -53,14 +58,39 @@ def checkout(request):
 
         if form.is_valid():
             total_price = 0
+            items = []
 
             # Loop through the products
             for item in cart:
                 product = item['product']
                 total_price += product.price * int(item['quantity'])
 
+                items.append({
+                    'price_data': {
+                        'currency': 'ksh',
+                        'product_data': {
+                            'name': product.title
+                        },
+                        'unit_amount': product.price
+                    },
+                    'quantity': item['quantity']
+                })
+
+            # Initialise the api
+            django_daraja.api_key = settings.CONSUMER_SECRET
+            session = django_daraja.checkout.Session.create(
+                payment_method=django_daraja,
+                line_items=items,
+                mode='payment',
+                success_url='https://127.0.0.1:8000/cart/success',
+                cancel_url='https://127.0.0.1:8000/cart/cancel'
+            )
+            payment_intent = session.payment_intent
+
             order = form.save(commit=False)
             order.created_by = request.user
+            order.is_paid = True
+            order.payment_intent = payment_intent
             order.paid = total_price
             order.save()
 

@@ -22,6 +22,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-xjgqt9ln)$=2n8v21hq2l@c_pnhtbw2$26a5cb25i($q!8g(5%'
 
+CONSUMER_KEY = 'fQCeAggmzDpD49A7ziYNtYqNAsbmPTkkesRK5NqDrng8Mvfh'
+
+CONSUMER_SECRET = '0sUtFj1cRNbhRBNRMtJY61zHWhvTCGL5DJpScLQWAvQuTyTV9nNImjQ5qW5BRlWQ'
+
+MPESA_SHORTCODE_TYPE = 'paybill'
+
+MPESA_PASSKEY = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919'
+
+MPESA_INITIATOR_USERNAME = 'testapi'
+
+MPESA_INITIATOR_SECURITY_CREDENTIALS = 'Safaricom999!*!'
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
