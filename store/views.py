@@ -1,6 +1,5 @@
-import django_daraja
 from django.conf import settings
-import json
+from .mpesa import initiate_stk_push
 from django_daraja.mpesa.core import MpesaClient
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
@@ -76,21 +75,13 @@ def checkout(request):
                     'quantity': item['quantity']
                 })
 
-            # Initialise the api
-            django_daraja.api_key = settings.CONSUMER_SECRET
-            session = django_daraja.checkout.Session.create(
-                payment_method=django_daraja,
-                line_items=items,
-                mode='payment',
-                success_url='https://127.0.0.1:8000/cart/success',
-                cancel_url='https://127.0.0.1:8000/cart/cancel'
-            )
-            payment_intent = session.payment_intent
+            # Initialise the Mpesa client
+
+            # set the credentials
 
             order = form.save(commit=False)
             order.created_by = request.user
             order.is_paid = True
-            order.payment_intent = payment_intent
             order.paid = total_price
             order.save()
 
