@@ -75,9 +75,19 @@ def checkout(request):
                     'quantity': item['quantity']
                 })
 
-            # Initialise the Mpesa client
+            phone_number = form.cleaned_data['phone_number']
 
-            # set the credentials
+            # Convert the phone number to the correct format
+
+            if not phone_number.startswith('+'):
+                phone_number = '+254' + phone_number.lstrip('0')
+
+            # Initialise the STK push
+            response = initiate_stk_push(phone_number)
+
+            print(response.json())
+
+            # Handle the response
 
             order = form.save(commit=False)
             order.created_by = request.user
@@ -95,7 +105,7 @@ def checkout(request):
 
             cart.clear()
 
-            return redirect('profile')
+            return redirect('success_page')
     else:
         form = OrderForm()
 

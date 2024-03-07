@@ -104,6 +104,11 @@ def profile(request):
     return render(request, 'userprofile/profile.html')
 
 
+@login_required
+def success_page(request):
+    return render(request, 'userprofile/success_page.html')
+
+
 def signup(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)

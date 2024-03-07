@@ -27,12 +27,17 @@ def initiate_stk_push(phone_number):
         "Timestamp": datetime.now().strftime('%Y%m%d%H%M%S'),
         "TransactionType": "CustomerPayBillOnline",
         "Amount": "1",
-        "PartyA": phone_number,  # Where the payment is going
+        "PartyA": phone_number, 
         "PartyB": shortcode,
         "PhoneNumber": phone_number,  # The one paying
-        "CallBackURL": "https://your-callback-url.com/callback",
+        "CallBackURL": "http://127.0.0.1:8000/",
         "AccountReference": "Test",
         "TransactionDesc": "Test"
+
     }
+    # Print the phone number
+    print(f'Phone number: {phone_number}')
+    print(f'Request payload: {request}')
+
     response = requests.post(url, json=request, headers=headers)
     return response
