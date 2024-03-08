@@ -5,12 +5,21 @@
 {% endblock %}
 
 {% block content %}
-    <h1 class="text-2xl">Login</h1>
-    &nbsp;
-    <form method="post" action=".">
-    {% csrf_token %}
-        <p class="space-2xl">{{ form.as_p }}</p>
-    &nbsp;
-    <button class=" mt-4 py-4 px-8 bg-teal-800 text-white">Login</button>
-    </form>
+    <div class="container mx-auto mt-8">
+        <h1 class="text-3xl font-semibold mb-4">Login</h1>
+        <form method="post" action=".">
+            {% csrf_token %}
+            <div class="mb-4">
+                {{ form.username.label_tag }}
+                <label for="username" class="block text-gray-70"></label>
+                <input type="text" name="username" id="username" class="form-input mt-1 block w-full rounded-md bg-gray-100 border border-gray-300 focus:bg-white focus:border-blue-500" required>
+            </div>
+            <div class="mb-4">
+                {{ form.password.label_tag }}
+                <label for="password"></label><input type="password" name="password" id="password" class="form-input mt-1 block w-full rounded-md bg-gray-100 border border-gray-300 focus:bg-white focus:border-blue-500" required>
+            </div>
+            <button type="submit" class="py-2 px-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded">Login</button>
+        </form>
+    </div>
 {% endblock %}
+

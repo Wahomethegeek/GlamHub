@@ -5,18 +5,30 @@
 {% endblock %}
 
 {% block content %}
-    <h1 class="text-2xl">Sign up</h1>
-    &nbsp;
-    <form method="post" action=".">
-    {% csrf_token %}
-    {{ form.as_p }}
-    &nbsp;
-    <button class="py-4 px-8 bg-teal-800 text-white">Sign up</button>
-    </form>
-    <form method="post" action="{% url 'login' %}">
-    {% csrf_token %}
-    <button type="submit" class="mt-6 inline-block py-4 px-8 bg-red-400 text-white rounded">
-        Log in
-    </button>
-    </form>
+    <div class="container mx-auto mt-8">
+        <h1 class="text-3xl font-semibold mb-4">Sign up</h1>
+        <form method="post" action=".">
+            {% csrf_token %}
+            <div class="mb-4">
+                <label for="username" class="block text-gray-700">Username</label>
+                <input type="text" name="username" id="username" class="form-input mt-1 block w-full" required>
+            </div>
+            <div class="mb-4">
+                <label for="email" class="block text-gray-700">Email</label>
+                <input type="email" name="email" id="email" class="form-input mt-1 block w-full" required>
+            </div>
+            <div class="mb-4">
+                <label for="password1" class="block text-gray-700">Password</label>
+                <input type="password" name="password1" id="password1" class="form-input mt-1 block w-full" required>
+            </div>
+            <div class="mb-4">
+                <label for="password2" class="block text-gray-700">Confirm Password</label>
+                <input type="password" name="password2" id="password2" class="form-input mt-1 block w-full" required>
+            </div>
+            <button type="submit" class="py-2 px-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded">Sign up</button>
+        </form>
+        <div class="mt-4">
+            <p>Already have an account? <a href="{% url 'login' %}" class="text-blue-500 hover:underline">Log in</a></p>
+        </div>
+    </div>
 {% endblock %}
