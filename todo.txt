@@ -30,7 +30,7 @@ TODO
     - Implement payment gateway Mpesa
         - [DONE] Get api keys from Daraja
         - [DONE] Install mpesa daraja and add credentials in setting.py
-        - Pass the consumer ke into the checkout view
+        - Pass the consumer key into the checkout view
         - Create Mesa checkout when creating order
         - Create a success page
     - Deploy project

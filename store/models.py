@@ -96,7 +96,7 @@ class Order(models.Model):
     last_name = models.CharField(max_length=255)
     email = models.EmailField(max_length=255)
     address = models.CharField(max_length=255)
-    zip_code = models.CharField(max_length=255)
+    # zip_code = models.CharField(max_length=255)
     city = models.CharField(max_length=255)
     phone_number = models.CharField(max_length=255)
     payment_intent = models.CharField(max_length=255)
